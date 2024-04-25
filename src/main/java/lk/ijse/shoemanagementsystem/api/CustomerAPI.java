@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/customer")
+@CrossOrigin(origins = "http://localhost:63342")
 @RequiredArgsConstructor
 public class CustomerAPI {
     private final CustomerService customerService;
@@ -23,4 +24,13 @@ public class CustomerAPI {
         return customerService.getAllCustomer();
     }
 
+    @PatchMapping
+    public void updateCustomer(@RequestBody CustomerDTO customerDTO){
+            customerService.updateCustomer(customerDTO);
+    }
+    @DeleteMapping(value = "/{id}")
+    public void deleteCustomer(@PathVariable("id")String id){
+        System.out.println(id);
+        customerService.delate(id);
+    }
 }

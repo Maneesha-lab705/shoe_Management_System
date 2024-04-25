@@ -19,7 +19,7 @@ public class CORSFilter extends HttpFilter {
         System.out.println(origin);
        if (origin.contains(getServletContext().getInitParameter("origin"))){
            res.setHeader("Access-Control-Allow-Origin",origin);
-           res.setHeader("Access-Control-Allow-Methods","GET,POST,PUT,PATCH,DELETE,HEADER");
+           res.setHeader("Access-Control-Allow-Methods","GET,POST,PUT,DELETE,HEADER");
            res.setHeader("Access-Control-Allow-Headers","Content-Type");
            res.setHeader("Access-Control-Expose-Headers","Content-Type");
        }

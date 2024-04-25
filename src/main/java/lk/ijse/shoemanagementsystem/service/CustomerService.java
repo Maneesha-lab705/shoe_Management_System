@@ -9,4 +9,7 @@ public interface CustomerService {
 
     List<CustomerDTO> getAllCustomer();
 
+    void updateCustomer(CustomerDTO customerDTO);
+
+    void delate(String id);
 }

@@ -10,19 +10,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class CustomerDTO {
-    private String customer_code;
+        private String customer_code;
     private String customer_name;
     private Gender gender;
-    private Date date;
+    private LocalDate date;
     private Level level;
     private Integer total_points;
-    private Date dob;
+    private LocalDate dob;
     private String address;
     private String contact;
     private String email;
