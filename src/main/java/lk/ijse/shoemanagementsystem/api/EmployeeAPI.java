@@ -1,5 +1,6 @@
 package lk.ijse.shoemanagementsystem.api;
 
+import lk.ijse.shoemanagementsystem.dto.CustomerDTO;
 import lk.ijse.shoemanagementsystem.dto.EmployeeDTO;
 import lk.ijse.shoemanagementsystem.entity.Gender;
 import lk.ijse.shoemanagementsystem.entity.Role;
@@ -11,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/employee")
@@ -28,33 +30,37 @@ public class EmployeeAPI {
                                     @RequestPart("dob") String dob,
                                     @RequestPart("dateOfJoin") String dateOfJoin,
                                     @RequestPart("branchName") String branchName,
-                                    @RequestPart("address") String address,
+                                    @RequestPart("address1") String address,
                                     @RequestPart("contact") String contact,
                                     @RequestPart("email") String email,
                                     @RequestPart("guardianName") String guardianName,
                                     @RequestPart("emergencyContact") String emergencyContact){
 
         System.out.println(contact);
-                EmployeeDTO newEmployeeDTO =new EmployeeDTO();
-        String base64ProPic = UtilMatters.convertBAse64(profilePic);
-
-
-        System.out.println(name);
-        newEmployeeDTO.setName(name);
-        newEmployeeDTO.setProfilePic(base64ProPic);
-        newEmployeeDTO.setGender(Gender.valueOf(gender));
-        newEmployeeDTO.setStatus(status);
-        newEmployeeDTO.setDesignation(designation);
-        newEmployeeDTO.setRole(Role.valueOf(role));
-        newEmployeeDTO.setDob(LocalDate.parse(dob));
-        newEmployeeDTO.setDateOfJoin(LocalDate.parse(dateOfJoin));
-        newEmployeeDTO.setBranchName(branchName);
-        newEmployeeDTO.setAddress1(address);
-        newEmployeeDTO.setContact(contact);
-        newEmployeeDTO.setEmail(email);
-        newEmployeeDTO.setGuardianName(guardianName);
-        newEmployeeDTO.setEmContact(emergencyContact);
-
-         employeeService.save(newEmployeeDTO);
+//                EmployeeDTO newEmployeeDTO =new EmployeeDTO();
+//        String base64ProPic = UtilMatters.convertBAse64(profilePic);
+//
+//
+//        System.out.println(name);
+//        newEmployeeDTO.setName(name);
+//        newEmployeeDTO.setProfilePic(base64ProPic);
+//        newEmployeeDTO.setGender(Gender.valueOf(gender));
+//        newEmployeeDTO.setStatus(status);
+//        newEmployeeDTO.setDesignation(designation);
+//        newEmployeeDTO.setRole(Role.valueOf(role));
+//        newEmployeeDTO.setDob(LocalDate.parse(dob));
+//        newEmployeeDTO.setDateOfJoin(LocalDate.parse(dateOfJoin));
+//        newEmployeeDTO.setBranchName(branchName);
+//        newEmployeeDTO.setAddress1(address);
+//        newEmployeeDTO.setContact(contact);
+//        newEmployeeDTO.setEmail(email);
+//        newEmployeeDTO.setGuardianName(guardianName);
+//        newEmployeeDTO.setEmContact(emergencyContact);
+//
+//         employeeService.save(newEmployeeDTO);
+    }
+    @GetMapping
+    List<EmployeeDTO> getAllEmployees(){
+        return employeeService.getAllEmployees();
     }
 }

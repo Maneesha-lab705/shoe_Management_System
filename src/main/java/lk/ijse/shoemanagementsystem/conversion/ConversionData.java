@@ -35,6 +35,10 @@ public class ConversionData {
         return mapper.map(employeeDTO, EmployeeEntity.class);
     }
 
+    public List<EmployeeDTO> getALlEmployeeLIst(List<EmployeeEntity> all) {
+        return mapper.map(all, List.class);
+    }
+
     /////////employee//////////////////
 
 }

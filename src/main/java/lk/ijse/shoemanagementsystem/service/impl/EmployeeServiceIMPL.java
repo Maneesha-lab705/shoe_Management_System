@@ -9,6 +9,8 @@ import lk.ijse.shoemanagementsystem.util.UtilMatters;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -20,6 +22,12 @@ public class EmployeeServiceIMPL implements EmployeeService {
         employeeDTO.setEmployee_code(getMaxId());
         return conversionData.toEmployeeDTO(employeeDAO.save(conversionData.toEmployeeEntity(employeeDTO)));
     }
+
+    @Override
+    public List<EmployeeDTO> getAllEmployees() {
+        return conversionData.getALlEmployeeLIst(employeeDAO.findAll());
+    }
+
     private String getMaxId() {
         return generateNextOrderId(employeeDAO.findMaxId());
     }
