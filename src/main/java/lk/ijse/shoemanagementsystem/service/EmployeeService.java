@@ -8,4 +8,6 @@ public interface EmployeeService {
     EmployeeDTO save(EmployeeDTO employeeDTO);
 
     List<EmployeeDTO> getAllEmployees();
+
+    void updatEmployee(EmployeeDTO employeeDTO);
 }
