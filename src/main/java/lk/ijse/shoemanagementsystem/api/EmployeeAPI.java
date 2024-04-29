@@ -67,4 +67,10 @@ public class EmployeeAPI {
     @PutMapping
     public void updateEmployee(@RequestBody EmployeeDTO employeeDTO){
         employeeService.updatEmployee(employeeDTO);    }
+
+    @DeleteMapping("/{id}")
+    public void deleteEmployee(@PathVariable("id")String id){
+        employeeService.deleteEmployee(id);
+    }
+
 }

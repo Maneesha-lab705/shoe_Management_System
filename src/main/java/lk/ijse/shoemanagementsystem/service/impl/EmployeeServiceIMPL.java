@@ -49,6 +49,11 @@ public class EmployeeServiceIMPL implements EmployeeService {
         byId.get().setEmContact(employeeDTO.getEmContact());
     }
 
+    @Override
+    public void deleteEmployee(String id) {
+        employeeDAO.deleteById(id);
+    }
+
     private String getMaxId() {
         return generateNextOrderId(employeeDAO.findMaxId());
     }
