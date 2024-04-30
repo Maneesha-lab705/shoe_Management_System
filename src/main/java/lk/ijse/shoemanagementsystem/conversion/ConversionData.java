@@ -1,11 +1,7 @@
 package lk.ijse.shoemanagementsystem.conversion;
 
-import lk.ijse.shoemanagementsystem.dto.CustomerDTO;
-import lk.ijse.shoemanagementsystem.dto.EmployeeDTO;
-import lk.ijse.shoemanagementsystem.dto.SupplierDTO;
-import lk.ijse.shoemanagementsystem.entity.CustomerEntity;
-import lk.ijse.shoemanagementsystem.entity.EmployeeEntity;
-import lk.ijse.shoemanagementsystem.entity.SupplierEntity;
+import lk.ijse.shoemanagementsystem.dto.*;
+import lk.ijse.shoemanagementsystem.entity.*;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -52,5 +48,20 @@ public class ConversionData {
         return mapper.map(all, List.class);
     }
 
+
+    public InventoryDTO toInventoryDto(InventoryEntity inventoryEntity){
+        return mapper.map(inventoryEntity,InventoryDTO.class);
+    }
+    public InventoryEntity toInventoryEntity(InventoryDTO inventoryDTO){
+        return mapper.map(inventoryDTO, InventoryEntity.class);
+    }
+
+    public ItemDTO toItemDto(ItemEntity itemEntity){
+        return mapper.map(itemEntity, ItemDTO.class);
+    }
+
+    public ItemEntity toItemEntity(ItemDTO itemDTO) {
+        return mapper.map(itemDTO,ItemEntity.class);
+    }
 }
 

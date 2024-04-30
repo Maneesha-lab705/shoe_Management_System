@@ -1,6 +1,8 @@
-package lk.ijse.shoemanagementsystem.entity;
+package lk.ijse.shoemanagementsystem.dto;
 
 import jakarta.persistence.*;
+import lk.ijse.shoemanagementsystem.entity.ItemEntity;
+import lk.ijse.shoemanagementsystem.entity.SupplierEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,14 +12,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity
-@Table(name = "inventory")
-public class InventoryEntity {
-    @Id
+public class InventoryDTO {
+
     private String code;
-    @ManyToOne
-    @JoinColumn(name = "shoeCode",nullable = false)
-    private ItemEntity itemEntity;
+    private String shoeCode;
+    private String supplierCode;
     private String description;
     @Column(columnDefinition = "LONGTEXT")
     private String pic;
@@ -28,13 +27,11 @@ public class InventoryEntity {
     private double expectedProfit;
     private double profitMargin;
     private String status;
+    private String supplierName;
     private Integer qty;
     private LocalDate buyDate;
 
-    @ManyToOne
-    @JoinColumn(name = "supplierCode",nullable = false)
-    private SupplierEntity supplierEntity;
-    private String supplierName;
+
 
 
 

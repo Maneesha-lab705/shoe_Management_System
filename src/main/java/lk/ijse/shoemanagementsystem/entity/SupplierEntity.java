@@ -27,6 +27,6 @@ public class SupplierEntity {
     private String contact2;
     private String email;
 
-    @OneToMany(mappedBy = "supplierEntity")
+    @OneToMany(mappedBy = "supplierEntity",cascade = CascadeType.ALL)
     private List<InventoryEntity> inventoryEntities;
 }
