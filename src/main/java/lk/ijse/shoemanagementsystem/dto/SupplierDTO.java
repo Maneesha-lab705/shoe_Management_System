@@ -1,19 +1,14 @@
-package lk.ijse.shoemanagementsystem.entity;
+package lk.ijse.shoemanagementsystem.dto;
 
-import jakarta.persistence.*;
+import lk.ijse.shoemanagementsystem.entity.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
+@AllArgsConstructor
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "supplier")
-public class SupplierEntity {
-    @Id
+public class SupplierDTO {
     private String code;
     private String name;
     private Category category;
@@ -26,7 +21,4 @@ public class SupplierEntity {
     private String contact1;
     private String contact2;
     private String email;
-
-    @OneToMany(mappedBy = "supplierEntity")
-    private List<InventoryEntity> inventoryEntities;
 }

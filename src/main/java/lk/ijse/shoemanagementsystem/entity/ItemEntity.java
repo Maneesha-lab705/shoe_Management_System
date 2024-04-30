@@ -1,33 +1,25 @@
 package lk.ijse.shoemanagementsystem.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "item")
 public class ItemEntity {
     @Id
-    private String itemCode;
-    private String itemDesc;
-    @Column(columnDefinition = "LONGTEXT")
-    private String pic;
-    private String category;
-    private int size;
-    private double unitPriceSale;
-    private double unitPriceBuy;
-    private double expectedProfit;
-    private double profitMargin;
-    private String status;
+    private String shoeCode;
+    private String description;
+    private ItemGender itemGender;
+    private Ocation ocation;
+    private Verities verities;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "supplierCode")
-    private SupplierEntity supplierEntity;
-
-
-
+    @OneToMany(mappedBy = "itemEntity",cascade = CascadeType.ALL)
+    private List<InventoryEntity> inventoryEntities;
 }
