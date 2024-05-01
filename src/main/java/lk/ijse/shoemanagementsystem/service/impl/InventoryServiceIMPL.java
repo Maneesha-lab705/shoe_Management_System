@@ -2,7 +2,7 @@ package lk.ijse.shoemanagementsystem.service.impl;
 
 import jakarta.transaction.Transactional;
 import lk.ijse.shoemanagementsystem.conversion.ConversionData;
-import lk.ijse.shoemanagementsystem.conversion.InventoryDAO;
+import lk.ijse.shoemanagementsystem.dao.InventoryDAO;
 import lk.ijse.shoemanagementsystem.dao.ItemDAO;
 import lk.ijse.shoemanagementsystem.dao.SupplierDAO;
 import lk.ijse.shoemanagementsystem.dto.InventoryDTO;

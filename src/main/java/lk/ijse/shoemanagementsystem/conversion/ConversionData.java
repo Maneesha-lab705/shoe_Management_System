@@ -63,5 +63,10 @@ public class ConversionData {
     public ItemEntity toItemEntity(ItemDTO itemDTO) {
         return mapper.map(itemDTO,ItemEntity.class);
     }
+
+    public List<ItemDTO> getAllItemList(List<ItemEntity> all) {
+        return mapper.map(all, List.class);
+    }
+
 }
 

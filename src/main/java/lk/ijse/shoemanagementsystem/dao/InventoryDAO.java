@@ -1,4 +1,4 @@
-package lk.ijse.shoemanagementsystem.conversion;
+package lk.ijse.shoemanagementsystem.dao;
 
 import lk.ijse.shoemanagementsystem.entity.InventoryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

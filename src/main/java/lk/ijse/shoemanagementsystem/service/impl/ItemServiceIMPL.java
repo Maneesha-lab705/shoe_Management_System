@@ -12,6 +12,8 @@ import lk.ijse.shoemanagementsystem.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -26,6 +28,12 @@ public class ItemServiceIMPL implements ItemService {
         System.out.println(itemEntity);
         itemDAO.save(itemEntity);
     }
+
+    @Override
+    public List<ItemDTO> getAllItem() {
+      return   conversionData.getAllItemList(itemDAO.findAll());
+    }
+
     private String selectItemCategory(Ocation occasion, Verities verities, ItemGender gender) {
         String gender1=null;
         String occasion1=null;
