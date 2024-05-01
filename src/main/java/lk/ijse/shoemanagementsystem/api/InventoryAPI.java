@@ -4,10 +4,7 @@ import lk.ijse.shoemanagementsystem.dto.InventoryDTO;
 import lk.ijse.shoemanagementsystem.entity.InventoryEntity;
 import lk.ijse.shoemanagementsystem.service.InventoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/inventory")
@@ -16,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class InventoryAPI {
     private final InventoryService inventoryService;
     @PostMapping
-    public void saveInventory(InventoryDTO inventoryDTO){
+    public void saveInventory(@RequestBody InventoryDTO inventoryDTO){
         inventoryService.saveInventory(inventoryDTO);
     }
 }

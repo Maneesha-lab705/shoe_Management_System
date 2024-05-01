@@ -29,4 +29,8 @@ public class SupplierEntity {
 
     @OneToMany(mappedBy = "supplierEntity",cascade = CascadeType.ALL)
     private List<InventoryEntity> inventoryEntities;
+
+    public SupplierEntity(String supplierCode) {
+        this.setCode(supplierCode);
+    }
 }
