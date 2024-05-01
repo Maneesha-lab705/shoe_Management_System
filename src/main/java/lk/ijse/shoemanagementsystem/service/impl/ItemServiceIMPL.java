@@ -34,6 +34,11 @@ public class ItemServiceIMPL implements ItemService {
       return   conversionData.getAllItemList(itemDAO.findAll());
     }
 
+    @Override
+    public void deleteItem(String id) {
+        itemDAO.deleteById(id);
+    }
+
     private String selectItemCategory(Ocation occasion, Verities verities, ItemGender gender) {
         String gender1=null;
         String occasion1=null;

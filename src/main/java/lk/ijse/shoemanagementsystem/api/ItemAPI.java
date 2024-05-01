@@ -22,4 +22,9 @@ public class ItemAPI {
     public List<ItemDTO> getAllItem(){
         return itemService.getAllItem();
     }
+    @DeleteMapping("/{id}")
+    public void deleteItem(@PathVariable("id")String id){
+        itemService.deleteItem(id);
+    }
+
 }
