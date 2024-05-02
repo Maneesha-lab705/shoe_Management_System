@@ -12,6 +12,7 @@ import lk.ijse.shoemanagementsystem.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,7 +32,15 @@ public class ItemServiceIMPL implements ItemService {
 
     @Override
     public List<ItemDTO> getAllItem() {
-      return   conversionData.getAllItemList(itemDAO.findAll());
+        List<ItemEntity> itemEntities = itemDAO.findAll();
+        List<ItemDTO> itemDTOs = new ArrayList<>();
+
+        for (ItemEntity itemEntity : itemEntities) {
+            ItemDTO itemDTO = conversionData.toItemDto(itemEntity); // Assuming conversionData.toItemDTO() converts ItemEntity to ItemDTO
+
+            itemDTOs.add(itemDTO);
+        }
+        return itemDTOs;
     }
 
     @Override

@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class InventoryEntity {
     @Id
     private String code;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "shoeCode",nullable = false)
     private ItemEntity itemEntity;
     private String description;
@@ -31,7 +31,7 @@ public class InventoryEntity {
     private Integer qty;
     private LocalDate buyDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "supplierCode",nullable = false)
     private SupplierEntity supplierEntity;
     private String supplierName;

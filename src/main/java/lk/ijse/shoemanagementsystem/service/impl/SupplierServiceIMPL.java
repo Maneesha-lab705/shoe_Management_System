@@ -3,12 +3,15 @@ package lk.ijse.shoemanagementsystem.service.impl;
 import jakarta.transaction.Transactional;
 import lk.ijse.shoemanagementsystem.conversion.ConversionData;
 import lk.ijse.shoemanagementsystem.dao.SupplierDAO;
+import lk.ijse.shoemanagementsystem.dto.ItemDTO;
 import lk.ijse.shoemanagementsystem.dto.SupplierDTO;
+import lk.ijse.shoemanagementsystem.entity.ItemEntity;
 import lk.ijse.shoemanagementsystem.entity.SupplierEntity;
 import lk.ijse.shoemanagementsystem.service.SupplierService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +51,15 @@ public class SupplierServiceIMPL implements SupplierService {
 
     @Override
     public List<SupplierDTO> getAllSupplier() {
-        return conversionData.getAllSuppliers(supplierDAO.findAll());
+        List<SupplierEntity> supplierEntities = supplierDAO.findAll();
+        List<SupplierDTO> supplierDTOS = new ArrayList<>();
+
+        for (SupplierEntity supplierEntity : supplierEntities) {
+            SupplierDTO supplierDTO = conversionData.toSupplierDTO(supplierEntity); // Assuming conversionData.toItemDTO() converts ItemEntity to ItemDTO
+
+            supplierDTOS.add(supplierDTO);
+        }
+        return supplierDTOS;
     }
 
     private String getMaxId() {

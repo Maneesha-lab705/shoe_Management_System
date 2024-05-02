@@ -14,6 +14,9 @@ import lk.ijse.shoemanagementsystem.service.InventoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -37,5 +40,39 @@ public class InventoryServiceIMPL implements InventoryService {
         inventoryDAO.save(inventory);
 
 
+    }
+
+    @Override
+    public void saveList(List<InventoryDTO> inventoryDTOList) {
+        List<InventoryEntity> inventoryEntityList = new ArrayList<>();
+
+        for (InventoryDTO inventoryDTO : inventoryDTOList) {
+            // Generate a unique code for the inventory item (if necessary)
+            String inventoryCode = UUID.randomUUID().toString();
+
+            // Create an instance of InventoryEntity and set its properties
+
+            InventoryEntity inventoryEntity = conversionData.toInventoryEntity(inventoryDTO);
+            inventoryEntity.setCode(inventoryCode);
+            inventoryEntity.setBuyDate(LocalDate.now());
+
+            // Create an instance of ItemEntity and set its properties
+            ItemEntity itemEntity = new ItemEntity();
+            itemEntity.setShoeCode(inventoryDTO.getShoeCode());
+
+            // Create an instance of SupplierEntity and set its properties
+            SupplierEntity supplierEntity = new SupplierEntity();
+            supplierEntity.setCode(inventoryDTO.getSupplierCode());
+
+            // Set the relationships between entities
+            inventoryEntity.setItemEntity(itemEntity);
+            inventoryEntity.setSupplierEntity(supplierEntity);
+
+            // Add the inventory entity to the list
+            inventoryEntityList.add(inventoryEntity);
+        }
+
+        // Save the list of inventory entities
+        inventoryDAO.saveAll(inventoryEntityList);
     }
 }
