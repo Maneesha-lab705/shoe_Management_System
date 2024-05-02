@@ -46,12 +46,41 @@ public class InventoryServiceIMPL implements InventoryService {
     public void saveList(List<InventoryDTO> inventoryDTOList) {
         List<InventoryEntity> inventoryEntityList = new ArrayList<>();
 
+//        for (InventoryDTO inventoryDTO : inventoryDTOList) {
+//            // Generate a unique code for the inventory item (if necessary)
+//            String inventoryCode = UUID.randomUUID().toString();
+//
+//            // Create an instance of InventoryEntity and set its properties
+//
+//            InventoryEntity inventoryEntity = conversionData.toInventoryEntity(inventoryDTO);
+//            inventoryEntity.setCode(inventoryCode);
+//            inventoryEntity.setBuyDate(LocalDate.now());
+//
+//            // Create an instance of ItemEntity and set its properties
+//            ItemEntity itemEntity = new ItemEntity();
+//            itemEntity.setShoeCode(inventoryDTO.getShoeCode());
+//
+//            // Create an instance of SupplierEntity and set its properties
+//            SupplierEntity supplierEntity = new SupplierEntity();
+//            supplierEntity.setCode(inventoryDTO.getSupplierCode());
+//            supplierEntity.setName(inventoryDTO.getSupplierName());
+//
+//            // Set the relationships between entities
+//            inventoryEntity.setItemEntity(itemEntity);
+//            inventoryEntity.setSupplierEntity(supplierEntity);
+//
+//            // Add the inventory entity to the list
+//            inventoryEntityList.add(inventoryEntity);
+//        }
+//
+//        // Save the list of inventory entities
+//        inventoryDAO.saveAll(inventoryEntityList);
+
         for (InventoryDTO inventoryDTO : inventoryDTOList) {
             // Generate a unique code for the inventory item (if necessary)
             String inventoryCode = UUID.randomUUID().toString();
 
             // Create an instance of InventoryEntity and set its properties
-
             InventoryEntity inventoryEntity = conversionData.toInventoryEntity(inventoryDTO);
             inventoryEntity.setCode(inventoryCode);
             inventoryEntity.setBuyDate(LocalDate.now());
@@ -59,10 +88,19 @@ public class InventoryServiceIMPL implements InventoryService {
             // Create an instance of ItemEntity and set its properties
             ItemEntity itemEntity = new ItemEntity();
             itemEntity.setShoeCode(inventoryDTO.getShoeCode());
+            itemEntity.setDescription(inventoryDTO.getDescription());
+            itemEntity.setShoeCode(inventoryDTO.getShoeCode());
+            itemEntity.setShoeCode(inventoryDTO.getShoeCode());
+            itemEntity.setShoeCode(inventoryDTO.getShoeCode());
 
             // Create an instance of SupplierEntity and set its properties
             SupplierEntity supplierEntity = new SupplierEntity();
             supplierEntity.setCode(inventoryDTO.getSupplierCode());
+            supplierEntity.setName(inventoryDTO.getSupplierName());
+
+            // Manually assign identifiers to the SupplierEntity
+            // Note: Make sure the IDs are unique and consistent
+            // You can use UUID.randomUUID().toString() to generate unique IDs
 
             // Set the relationships between entities
             inventoryEntity.setItemEntity(itemEntity);
