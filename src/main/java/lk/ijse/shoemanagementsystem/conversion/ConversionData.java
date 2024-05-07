@@ -68,5 +68,13 @@ public class ConversionData {
         return mapper.map(all, List.class);
     }
 
+
+    //UserMapping
+    public UserEntity toUserEntity(UserDTO userDTO) {
+        return mapper.map(userDTO, UserEntity.class);
+    }
+    public UserDTO toUserDTO(UserEntity userEntity) {
+        return  mapper.map(userEntity, UserDTO.class);
+    }
 }
 
