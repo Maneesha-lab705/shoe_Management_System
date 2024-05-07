@@ -26,4 +26,12 @@ public class ItemEntity {
     public ItemEntity(String shoeCode) {
         this.setShoeCode(shoeCode);
     }
+
+    public ItemEntity(String shoeCode, String description, ItemGender itemGender, Ocation ocation, Verities verities) {
+        this.setShoeCode(shoeCode);
+        this.setDescription(description);
+        this.setItemGender(itemGender);
+        this.setOcation(ocation);
+        this.setVerities(verities);
+    }
 }
