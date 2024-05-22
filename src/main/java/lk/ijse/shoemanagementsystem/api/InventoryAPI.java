@@ -1,5 +1,6 @@
 package lk.ijse.shoemanagementsystem.api;
 
+import lk.ijse.shoemanagementsystem.dto.EmployeeDTO;
 import lk.ijse.shoemanagementsystem.dto.InventoryDTO;
 import lk.ijse.shoemanagementsystem.entity.InventoryEntity;
 import lk.ijse.shoemanagementsystem.service.InventoryService;
@@ -23,4 +24,14 @@ public class InventoryAPI {
     public void saveInventoryList(@RequestBody List<InventoryDTO> inventoryDTOList){
         inventoryService.saveList(inventoryDTOList);
     }
+    @GetMapping
+    List<InventoryDTO> getAllInventoryDetails(){
+        return inventoryService.getAll();
+    }
+
+    @GetMapping("/getAllSizeQty")
+    public InventoryDTO getAllSizeQty(@RequestParam String shoeCode, @RequestParam Integer size ){
+        return inventoryService.getAllSizeQty(shoeCode,size);
+    }
+
 }

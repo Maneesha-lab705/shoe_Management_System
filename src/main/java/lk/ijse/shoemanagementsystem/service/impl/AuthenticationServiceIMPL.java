@@ -1,9 +1,9 @@
 package lk.ijse.shoemanagementsystem.service.impl;
 
-import lk.ijse.shoemanagementsystem.conversion.ConversionData;
+import lk.ijse.shoemanagementsystem.util.Mapping;
 import lk.ijse.shoemanagementsystem.dao.UserDao;
 import lk.ijse.shoemanagementsystem.dto.UserDTO;
-import lk.ijse.shoemanagementsystem.entity.Role;
+import lk.ijse.shoemanagementsystem.enums.Role;
 import lk.ijse.shoemanagementsystem.reqAndresp.response.JwtAuthResponse;
 import lk.ijse.shoemanagementsystem.reqAndresp.secure.SignIn;
 import lk.ijse.shoemanagementsystem.reqAndresp.secure.SignUp;
@@ -23,7 +23,7 @@ import java.util.UUID;
 public class AuthenticationServiceIMPL implements AuthenticationService {
     private final UserDao userRepo;
     private final JWTService jwtService;
-    private final ConversionData mapping;
+    private final Mapping mapping;
     //utils
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;

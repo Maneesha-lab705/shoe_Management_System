@@ -1,13 +1,13 @@
 package lk.ijse.shoemanagementsystem.service.impl;
 
 import jakarta.transaction.Transactional;
-import lk.ijse.shoemanagementsystem.conversion.ConversionData;
+import lk.ijse.shoemanagementsystem.util.Mapping;
 import lk.ijse.shoemanagementsystem.dao.ItemDAO;
 import lk.ijse.shoemanagementsystem.dto.ItemDTO;
 import lk.ijse.shoemanagementsystem.entity.ItemEntity;
-import lk.ijse.shoemanagementsystem.entity.ItemGender;
-import lk.ijse.shoemanagementsystem.entity.Ocation;
-import lk.ijse.shoemanagementsystem.entity.Verities;
+import lk.ijse.shoemanagementsystem.enums.ItemGender;
+import lk.ijse.shoemanagementsystem.enums.Ocation;
+import lk.ijse.shoemanagementsystem.enums.Verities;
 import lk.ijse.shoemanagementsystem.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 public class ItemServiceIMPL implements ItemService {
-    private final ConversionData conversionData;
+    private final Mapping conversionData;
     private final ItemDAO itemDAO;
     @Override
     public void saveItem(ItemDTO itemDTO) {

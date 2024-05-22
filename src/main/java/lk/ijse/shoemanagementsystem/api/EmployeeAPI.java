@@ -1,13 +1,11 @@
 package lk.ijse.shoemanagementsystem.api;
 
-import lk.ijse.shoemanagementsystem.dto.CustomerDTO;
 import lk.ijse.shoemanagementsystem.dto.EmployeeDTO;
-import lk.ijse.shoemanagementsystem.entity.Gender;
-import lk.ijse.shoemanagementsystem.entity.Role;
+import lk.ijse.shoemanagementsystem.enums.Gender;
+import lk.ijse.shoemanagementsystem.enums.Role;
 import lk.ijse.shoemanagementsystem.service.EmployeeService;
 import lk.ijse.shoemanagementsystem.util.UtilMatters;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.event.spi.SaveOrUpdateEvent;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
 package lk.ijse.shoemanagementsystem.dto;
 
-import lk.ijse.shoemanagementsystem.entity.Category;
+import lk.ijse.shoemanagementsystem.enums.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

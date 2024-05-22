@@ -1,7 +1,7 @@
 package lk.ijse.shoemanagementsystem.service.impl;
 
 import jakarta.transaction.Transactional;
-import lk.ijse.shoemanagementsystem.conversion.ConversionData;
+import lk.ijse.shoemanagementsystem.util.Mapping;
 import lk.ijse.shoemanagementsystem.dao.CustomerDAO;
 import lk.ijse.shoemanagementsystem.dto.CustomerDTO;
 import lk.ijse.shoemanagementsystem.entity.CustomerEntity;
@@ -18,7 +18,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Transactional
 public class CustomerServiceIMPL implements CustomerService {
-    private  final ConversionData conversionData;
+    private  final Mapping conversionData;
     private final CustomerDAO customerDAO;
     private final UtilMatters utilMatters;
     @Override

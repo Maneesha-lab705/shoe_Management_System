@@ -3,6 +3,8 @@ package lk.ijse.shoemanagementsystem.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lk.ijse.shoemanagementsystem.enums.Gender;
+import lk.ijse.shoemanagementsystem.enums.Level;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

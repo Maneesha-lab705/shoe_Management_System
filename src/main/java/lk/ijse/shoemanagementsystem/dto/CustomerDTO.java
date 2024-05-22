@@ -1,17 +1,13 @@
 package lk.ijse.shoemanagementsystem.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lk.ijse.shoemanagementsystem.entity.Gender;
-import lk.ijse.shoemanagementsystem.entity.Level;
+import lk.ijse.shoemanagementsystem.enums.Gender;
+import lk.ijse.shoemanagementsystem.enums.Level;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor

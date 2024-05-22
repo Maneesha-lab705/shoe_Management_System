@@ -1,12 +1,11 @@
 package lk.ijse.shoemanagementsystem.service.impl;
 
 import jakarta.transaction.Transactional;
-import lk.ijse.shoemanagementsystem.conversion.ConversionData;
+import lk.ijse.shoemanagementsystem.util.Mapping;
 import lk.ijse.shoemanagementsystem.dao.EmployeeDAO;
 import lk.ijse.shoemanagementsystem.dto.EmployeeDTO;
 import lk.ijse.shoemanagementsystem.entity.EmployeeEntity;
 import lk.ijse.shoemanagementsystem.service.EmployeeService;
-import lk.ijse.shoemanagementsystem.util.UtilMatters;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,7 @@ import java.util.Optional;
 @Transactional
 public class EmployeeServiceIMPL implements EmployeeService {
     private final EmployeeDAO employeeDAO;
-    private final ConversionData conversionData;
+    private final Mapping conversionData;
     @Override
     public EmployeeDTO save(EmployeeDTO employeeDTO) {
         employeeDTO.setEmployee_code(getMaxId());

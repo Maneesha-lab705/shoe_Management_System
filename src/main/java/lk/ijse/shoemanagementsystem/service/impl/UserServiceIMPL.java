@@ -1,7 +1,7 @@
 package lk.ijse.shoemanagementsystem.service.impl;
 
 import jakarta.transaction.Transactional;
-import lk.ijse.shoemanagementsystem.conversion.ConversionData;
+import lk.ijse.shoemanagementsystem.util.Mapping;
 import lk.ijse.shoemanagementsystem.dao.UserDao;
 import lk.ijse.shoemanagementsystem.dto.UserDTO;
 import lk.ijse.shoemanagementsystem.service.UserService;
@@ -10,14 +10,12 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.regex.Pattern;
-
 @Service
 @Transactional
 @RequiredArgsConstructor
 public class UserServiceIMPL implements UserService {
     private final UserDao userRepo;
-    private final ConversionData map;
+    private final Mapping map;
     @Override
     public UserDetailsService userDetailsService() {
         return username ->

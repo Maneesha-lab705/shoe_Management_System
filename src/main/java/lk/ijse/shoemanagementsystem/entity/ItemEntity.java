@@ -1,6 +1,9 @@
 package lk.ijse.shoemanagementsystem.entity;
 
 import jakarta.persistence.*;
+import lk.ijse.shoemanagementsystem.enums.ItemGender;
+import lk.ijse.shoemanagementsystem.enums.Ocation;
+import lk.ijse.shoemanagementsystem.enums.Verities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

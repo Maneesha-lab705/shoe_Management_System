@@ -1,4 +1,4 @@
-package lk.ijse.shoemanagementsystem.entity;
+package lk.ijse.shoemanagementsystem.enums;
 
 public enum ItemOccasion {
      Formal

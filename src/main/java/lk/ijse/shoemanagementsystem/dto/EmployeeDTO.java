@@ -1,7 +1,7 @@
 package lk.ijse.shoemanagementsystem.dto;
 
-import lk.ijse.shoemanagementsystem.entity.Gender;
-import lk.ijse.shoemanagementsystem.entity.Role;
+import lk.ijse.shoemanagementsystem.enums.Gender;
+import lk.ijse.shoemanagementsystem.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

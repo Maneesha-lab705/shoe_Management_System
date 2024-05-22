@@ -1,11 +1,9 @@
 package lk.ijse.shoemanagementsystem.service.impl;
 
 import jakarta.transaction.Transactional;
-import lk.ijse.shoemanagementsystem.conversion.ConversionData;
+import lk.ijse.shoemanagementsystem.util.Mapping;
 import lk.ijse.shoemanagementsystem.dao.SupplierDAO;
-import lk.ijse.shoemanagementsystem.dto.ItemDTO;
 import lk.ijse.shoemanagementsystem.dto.SupplierDTO;
-import lk.ijse.shoemanagementsystem.entity.ItemEntity;
 import lk.ijse.shoemanagementsystem.entity.SupplierEntity;
 import lk.ijse.shoemanagementsystem.service.SupplierService;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +18,7 @@ import java.util.Optional;
 @Transactional
 public class SupplierServiceIMPL implements SupplierService {
     private final SupplierDAO supplierDAO;
-    private final ConversionData conversionData;
+    private final Mapping conversionData;
 
     @Override
     public void saveSupplier(SupplierDTO supplierDTO) {
