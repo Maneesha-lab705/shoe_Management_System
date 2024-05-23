@@ -15,4 +15,5 @@ public class OrderItemDTO{
     private Integer size;
     private Double unitPrice;
     private Integer qty;
+    private String pic;
 }

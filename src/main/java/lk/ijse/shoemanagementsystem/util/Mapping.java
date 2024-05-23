@@ -72,6 +72,7 @@ public class Mapping {
 //        return mapper.map(all, List.class);
 //    }
 //OrderMapping
+
 public OrderEntity toOrderEntity(OrderDTO orderDTO) {
     return mapper.map(orderDTO, OrderEntity.class);
 }
@@ -81,8 +82,8 @@ public OrderEntity toOrderEntity(OrderDTO orderDTO) {
 
 
     //OrderItemMapping
-    public OrderItemDTO toOrderItemDTO(OrderItemEntity orderItemEntity) {
-        return  mapper.map(orderItemEntity, OrderItemDTO.class);
+    public OrderDTO toOrderItemDTO(OrderEntity orderEntity) {
+        return  mapper.map(orderEntity, OrderDTO.class);
     }
     public OrderItemEntity toOrderItem(OrderItemDTO orderItemDTO) {
         return  mapper.map(orderItemDTO, OrderItemEntity.class);
@@ -102,5 +103,14 @@ public OrderEntity toOrderEntity(OrderDTO orderDTO) {
 //    public PlaceOrderEntity toPlaceorderEntity(PlaceOrderDTO placeOrderDTO) {
 //        return mapper.map(placeOrderDTO,PlaceOrderEntity.class);
 //    }
+public List<UserDTO> toUserDTOList(List<UserEntity> userEntities) {
+    return mapper.map(userEntities, List.class);
+}
+
+    public List<OrderItemDTO> getAllOrder(List<OrderItemEntity> all) {
+        return mapper.map(all, List.class);
+    }
+
+
 }
 

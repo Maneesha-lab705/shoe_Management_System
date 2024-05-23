@@ -26,6 +26,10 @@ public class ItemEntity {
     @OneToMany(mappedBy = "itemEntity",cascade = CascadeType.ALL)
     private List<InventoryEntity> inventoryEntities;
 
+    @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
+    private List<ReturnOrderEntity> returnOrders;
+
+
     public ItemEntity(String shoeCode) {
         this.setShoeCode(shoeCode);
     }

@@ -14,6 +14,7 @@ public class OrderDTO{
     private String code;
     private String customerName;
     private Double amount;
+    private Double profit;
     private Date date;
     private Payment payment;
     private Integer point;

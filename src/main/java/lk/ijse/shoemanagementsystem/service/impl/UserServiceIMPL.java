@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -26,5 +28,10 @@ public class UserServiceIMPL implements UserService {
     @Override
     public void save(UserDTO user) {
         map.toUserDTO(userRepo.save(map.toUserEntity(user)));
+    }
+
+    @Override
+    public List<UserDTO> getAllUser() {
+        return map.toUserDTOList(userRepo.findAll());
     }
 }

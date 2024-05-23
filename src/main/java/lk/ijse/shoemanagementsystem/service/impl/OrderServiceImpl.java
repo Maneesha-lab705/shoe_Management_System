@@ -15,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,7 +42,9 @@ public class OrderServiceImpl implements OrderService {
     private final Mapping mapping;
     @Override
     public void purchaseOrder(OrderDTO orderDTO, List<OrderItemDTO> orderItemDTOS, String customerCode) {
+
         OrderEntity orderEntity = mapping.toOrderEntity(orderDTO);
+        orderEntity.setDate(LocalDate.now());
         orderDao.save(orderEntity);
         for (OrderItemDTO orderItemDTO : orderItemDTOS) {
             orderItemDTO.setId(nextOrderItemId());
@@ -76,6 +79,7 @@ public class OrderServiceImpl implements OrderService {
             return "O-001";
         }
     }
+
 
     private static String generateNextOrderId(String lastOrderId) {
         String numericPart = lastOrderId.substring(2);
